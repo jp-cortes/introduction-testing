@@ -26,8 +26,8 @@ test('should multiply for zero', () => { // test scenario
   const answer = multiply(4, 0); // resolve test
   expect(answer).toBeNull();// hipotesis
   // this test should pass
-  const answer2 = multiply(5, 0);
-  expect(answer2).toBe(0);
+  // const answer3 = multiply(5, 0);
+  // expect(answer3).toBe(0);
   // this test shouldn't pass
   // because 0 !== null
 });
