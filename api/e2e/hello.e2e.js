@@ -1,6 +1,6 @@
 const request = require('supertest');
 
-const createApp = require('../src/app');
+const createApp = require('../src/app'); // create an app using ex[ress]
 
 describe('test for hello end point', () => {
   let app = null;
@@ -11,15 +11,15 @@ describe('test for hello end point', () => {
   });
 
   afterAll(async () => {
-    await server.close();
+    await server.close(); // this is always async
   });
 
   describe('test for [GET] /', () => {
-    test('should return "hello world"', () => request(app)
+    test('should return "hello there"', () => request(app)
       .get('/')
       .expect(200)
       .then((response) => {
-        expect(response.text).toEqual('Hello World!');
+        expect(response.text).toEqual('Hello There!');
       }));
   });
 });
