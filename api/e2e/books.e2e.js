@@ -1,5 +1,5 @@
 const request = require('supertest');
-const { MongoCLient } = require('mongodb');
+const { MongoClient } = require('mongodb');
 
 const createApp = require('../src/app');
 const { config } = require('../src/config');
@@ -14,8 +14,8 @@ describe('test for books', () => {
 
   beforeAll(async () => {
     app = createApp();
-    server = app.listen(3001);
-    const client = new MongoCLient(MONGO_URI, {
+    server = app.listen(3002);// the port for test may be different from the one in production
+    const client = new MongoClient(MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
@@ -25,7 +25,7 @@ describe('test for books', () => {
 
   afterAll(async () => {
     await server.close();
-    await dataBase.dropDataBase();
+    await dataBase.dropDatabase();
   });
 
   describe('test for GET /api/v1/books', () => {
