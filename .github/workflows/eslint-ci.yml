@@ -5,7 +5,7 @@ on:
   push:
     paths:
       - "./api/**"
-      - ".github/workflows/api-ci.yml"
+      - ".github/workflows/eslint-ci.yml"
 
 defaults:
   run:
