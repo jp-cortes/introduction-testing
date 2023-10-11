@@ -1,4 +1,4 @@
-name: API CI
+name: LINT CI
 
 #on: [push]
 on:
